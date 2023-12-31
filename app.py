@@ -22,7 +22,7 @@ def create_app():
             formattedDate = datetime.datetime.today().strftime("%Y-%m-%d")
             entries.append((content, formattedDate))
             app.db.entries.insert_one({"content": content, "date": formattedDate})
-            return redirect(url_for('home'))
+            
         mongo_entries_with_date = [
             (
                 e["content"],
